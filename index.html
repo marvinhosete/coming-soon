@@ -1,20 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3840/3840771.png">
+    <title>marvinho</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./script.js"></script>
-    <title>sete</title>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="./script/app.js"></script>
+    <script src="./script/tailwind.config.js"></script>
+    <script src="./script/card.js"></script>
+
+    <link rel="stylesheet" href="./style/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body>
-    <div class="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
-        <h1 class="text-5xl text-white font-bold mb-8 animate-pulse" id="title"></h1>
-        <p class="text-white text-lg mb-8" id="description"></p>
+<body class="w-full h-screen overflow-hidden bg-black">
+    <audio id="audio" loop>
+        <source src="./audio/gudinaiti.m4a" type="audio/mp4">
+    </audio>
+
+    <div class="flex items-center justify-center h-full w-full text-white">
+        <button id="reveal"
+            class="text-sm rounded p-2 bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-zinc-700 animation-pulse">clique
+            para revelar</button>
+
+        <div id="content"
+            class="flex flex-col items-center justify-center h-96 w-4/5 md:w-[30rem] md:h-64 space-y-6 bg-white text-white rounded bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-zinc-600 hidden">
+            <div class="flex flex-col items-center justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-10">
+                <img class="w-32 h-32 rounded" id="avatar">
+                <div class="flex flex-col items-start text-center justify-center space-y-4">
+                    <div class="flex flex-col items-center justify-center w-full md:items-start">
+                        <h1 id="username" class="m-0 text-3xl font-bold"></h1>
+                        <div id="badges" class="flex space-x-1">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/hypebrilliance.svg"
+                                title="Brilliance">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/activedeveloper.svg"
+                                title="Desenvolvedor(a) Ativo(a)">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/nitro.svg"
+                                title="Nitro">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/lvl3.svg"
+                                title="Boost Nível 3">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/pomelo.svg"
+                                title="Legacy User">
+                            <img class="flag-icon h-[22px]"
+                                src="https://raw.githubusercontent.com/rhxsp/rhxDiscordAssets/main/badges/questcompleted1.svg"
+                                title="Completou uma Missão">
+                        </div>
+                    </div>
+                    <p id="description" class="italic">I"m sorry.. I"m just tired.</p>
+                </div>
+            </div>
+
+            <div class="flex space-x-2">
+                <div class="flex items-center justify-center w-10 h-10 bg-black rounded hover:cursor-pointer"
+                    onclick="window.open('https://discord.com/users/288448920949096458')" title="pequenomarvin">
+                    <img class="h-6 hover:cursor-pointer"
+                        src="https://raw.githubusercontent.com/marvinhosete/dev-marvin.github.io/main/icons/discord.svg">
+                </div>
+
+                <div class="flex items-center justify-center w-10 h-10 bg-black rounded hover:cursor-pointer"
+                    onclick="window.open('https://github.com/marvinhosete')" title="marvinhosete">
+                    <img class="h-6 hover:cursor-pointer"
+                        src="https://raw.githubusercontent.com/marvinhosete/dev-marvin.github.io/main/icons/github.svg">
+                </div>
+
+                <div class="flex items-center justify-center w-10 h-10 bg-black rounded hover:cursor-pointer"
+                    onclick="window.open('https://open.spotify.com/user/vqlfjag7nw5gmjiphawgj7906?si=fcb700ebd5764851')" title="marvinho">
+                    <img class="h-6 hover:cursor-pointer"
+                        src="https://raw.githubusercontent.com/marvinhosete/dev-marvin.github.io/main/icons/spotify.svg">
+                </div>
+
+                <div class="flex items-center justify-center w-10 h-10 bg-black rounded hover:cursor-pointer"
+                    onclick="window.open('https://steamcommunity.com/id/marvinhosete/')" title="marvinhosete">
+                    <img class="h-6 hover:cursor-pointer"
+                        src="https://raw.githubusercontent.com/marvinhosete/dev-marvin.github.io/main/icons/steam.svg">
+                </div>
+
+                <div class="flex items-center justify-center w-10 h-10 bg-black rounded hover:cursor-pointer"
+                    onclick="window.open('https://twitter.com/marvinhosete')" title="marvinhosete">
+                    <img class="h-6 hover:cursor-pointer"
+                        src="https://raw.githubusercontent.com/marvinhosete/dev-marvin.github.io/main/icons/twitter.svg">
+                </div>
+            </div>
+        </div>
+
+        <div id="views"
+            class="flex absolute items-center justify-center space-x-2 right-4 top-4 w-28 h-10 rounded bg-white text-white rounded bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-zinc-600 hidden">
+            <i class="fa-regular fa-eye"></i>
+            <p class="font-semibold text-sm"></p>
+        </div>
     </div>
+
+    <video id="video"
+        class="fixed top-0 left-0 min-w-full max-w-none min-h-full h-auto -z-10 filter brightness-[.3] saturate-100 hidden"
+        src="./image/background.mp4" loop muted></video>
 </body>
 
 </html>

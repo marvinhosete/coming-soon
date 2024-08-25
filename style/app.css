@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    cursor: url('../image/cursor.png'), auto;
+}
+
+button:hover {
+    cursor: url('../image/cursor-pointer.png'), auto !important;
+}
+
+.flag-icon {
+    cursor: url('../image/cursor-pointer.png'), auto !important;
+}
+
+.cursor-pointer {
+    cursor: url('../image/cursor-pointer.png'), auto !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.tippy-box[data-theme~='dc'] {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    background-color: #000000 !important;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.tippy-box[data-theme~='dc']>.tippy-arrow::before {
+    color: #000000;
+}
+
+.animation-pulse {
+    /*box-shadow: 0 0 0 20px rgba(229,62,62, 0.5);
+    transform: scale(0.8);*/
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        box-shadow: 0 0 0 0 rgb(63 63 70);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(229, 62, 62, 0);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in-animation 4s forwards;
+}
+
+@keyframes fade-in-animation {
+    to {
+        opacity: 1;
+    }
+}
