@@ -1,12 +1,15 @@
 const fetchUser = async (id) => await fetch(`https://discordlookup.mesalytic.moe/v1/user/${id}/`).then(response => response.json()).catch(error => console.log(error))
 
-const init = async () => {
-    const data = await Promise.all([fetchUser('288448920949096458'), fetchUser('1192551694358286407')])
-    document.getElementById('avatar').src = data[0].avatar.link
-    document.getElementById('username').innerHTML = data[0].global_name
+const init = () => {
+    fetchUser('288448920949096458').then(data => {
+        document.getElementById('avatar').src = data.avatar.link
+        document.getElementById('username').innerHTML = data.global_name
+    })
 
-    document.getElementById('avatar-2').src = data[1].avatar.link
-    document.getElementById('username-2').innerHTML = data[1].global_name
+    fetchUser('1192551694358286407').then(data => {
+        document.getElementById('avatar-2').src = data.avatar.link
+        document.getElementById('username-2').innerHTML = data.global_name
+    })
 }
 
 init()
