@@ -23,12 +23,12 @@
         <source src="./audio/gudinaiti.m4a" type="audio/mp4">
     </audio>
 
-    <div class="flex items-center justify-center h-full w-full text-white">
+    <div class="flex items-center justify-center h-full w-full text-white overflow-y-auto md:overflow-y-hidden">
         <button id="reveal"
             class="text-sm rounded p-2 bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-zinc-700 animation-pulse">clique
             para revelar</button>
 
-        <div id="content" class="flex items-center justify-center flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 w-full hidden">
+        <div id="content" class="flex items-center md:justify-center flex-col space-y-4 pt-48 pb-8 md:flex-row md:space-x-4 md:space-y-0 md:py-0 w-full min-h-screen hidden">
             <div
                 class="flex flex-col items-center justify-center h-96 w-4/5 md:w-[30rem] md:h-64 space-y-6 bg-white text-white rounded bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-zinc-600">
                 <div class="flex flex-col items-center justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-10">
@@ -143,7 +143,7 @@
 
     <video id="video"
         class="fixed top-0 left-0 min-w-full max-w-none min-h-full h-auto -z-10 filter brightness-[.3] saturate-100 hidden"
-        src="./image/background.mp4" loop muted></video>
+        src="./image/background.mp4" loop muted playsInline webkit-playsinline></video>
 </body>
 
 </html>
