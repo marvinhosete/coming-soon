@@ -6,12 +6,10 @@ const init = () => {
         document.getElementById('username').innerHTML = data.global_name
     })
 
-    /*
     fetchUser('1192551694358286407').then(data => {
         document.getElementById('avatar-2').src = data.avatar.link
         document.getElementById('username-2').innerHTML = data.global_name
     })
-    */
 }
 
 init()
