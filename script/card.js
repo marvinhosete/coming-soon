@@ -10,15 +10,6 @@ const init = () => {
 
         document.getElementById('username').innerHTML = data.global_name
     })
-
-    fetchUser('1192551694358286407').then(data => {
-        const avatar = document.getElementById('avatar-2')
-        
-        avatar.src = data.avatar.link
-        avatar.onerror = () => avatar.src = '/image/invalid.png'
-        
-        document.getElementById('username-2').innerHTML = data.global_name
-    })
 }
 
 init()
